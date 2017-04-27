@@ -1,6 +1,6 @@
 # Projeto de Programação 1 - 8Bit-Nier
 
-#### Integrantes: 
+#### Contribuidores: 
 * Karen Nayara Gomes da Silva(https://github.com/karenngomes)
 * Nicholas J. de A. Fonseca(https://github.com/Nicholas-ar)
 

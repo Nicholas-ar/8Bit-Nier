@@ -5,7 +5,7 @@
 * Nicholas J. de A. Fonseca(https://github.com/Nicholas-ar)
 
 #### Gameplay:
-- Shoot 'em up em que o personagem se move e atira para evitar ser atingido pelos inimigos.
+- Shoot 'em up em que o personagem se move e atira para evitar ser atingido pelos inimigos que vem em sua direção.
 
 #### Assuntos utilizados:
 - Condições - Detectar colisões e diminuir o HP do jogador/inimigos de acordo.

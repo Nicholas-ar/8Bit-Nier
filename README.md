@@ -14,4 +14,4 @@
 - Matrizes - Posicionamento dos personagens e inimigos.
 - Structs e arquivos - Armazenamento das pontuações.
 - Funções - Ações do jogador.
-- Ponteiros - Argumentos de funções.
+- Ponteiros - Argumentos de funções e Bitmap.

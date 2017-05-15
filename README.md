@@ -8,10 +8,9 @@
 - Shoot 'em up em que o personagem se move e atira para evitar ser atingido pelos inimigos que vem em sua direção.
 
 #### Conhecimentos aplicados:
-- Condições - Detectar colisões e diminuir o HP do jogador/inimigos de acordo.
+- Condições - Detectar colisões e movimentos.
 - Repetição - O jogo irá rodar enquanto o jogador permanecer vivo.
-- Arrays e recursão - Ordenação das pontuações.
-- Matrizes - Posicionamento dos personagens e inimigos.
-- Structs e arquivos - Armazenamento das pontuações.
-- Funções - Ações do jogador.
-- Ponteiros - Argumentos de funções e Bitmap.
+- Arrays e matrizes- Estados dos inimigos.
+- Structs - Armazenamento da pontuação.
+- Funções - Timer e colisões.
+- Ponteiros - Alocação dinâmica e Bitmap.

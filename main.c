@@ -41,7 +41,7 @@ int main()
   set_window_title("8 Bit Nier");
 
   int tiro = 0,i_pod = 430,i_bullet,j_bullet = 70,j_stubby = 750,j_flyer = 750,j_flyer2 = 750;
-  int i , rodando = 1, menu=1, abatidos = 0;
+  int i , rodando = 1, menu=1, abatidos = 0, tempoFlyer = 5000,tempoFlyer2 = 7500;
   jogador n;
   int **inimigos;
   inimigos = calloc(3,sizeof(int));
@@ -95,6 +95,8 @@ int main()
     }
     if(rodando==0 && key[KEY_ENTER])
     {
+        tempoFlyer = 5000;
+        tempoFlyer2 = 7500;
         timer=0;
         tiro=0;
         j_bullet = 70;
@@ -112,6 +114,8 @@ int main()
     }
     if(menu==1 && key[KEY_ENTER])
     {
+        tempoFlyer2 = 7500;
+        tempoFlyer = 5000;
         timer=0;
         tiro=0;
         j_bullet = 70;
@@ -151,6 +155,7 @@ int main()
         tiro=0;
         j_flyer = 750;
         j_bullet = 70;
+        tempoFlyer -= 50;
         abatidos++;
     }
     if(bounding_box_collision(j_bullet,i_bullet,bullet->w,bullet->h,j_flyer2,300,flyer->w,flyer->h)==TRUE)
@@ -159,6 +164,7 @@ int main()
         tiro=0;
         j_flyer2 = 750;
         j_bullet = 70;
+        tempoFlyer2 -= 50;
         abatidos++;
     }
     if(timer-marcadores[0]>=2000)
@@ -166,12 +172,12 @@ int main()
         marcadores[0]=timer;
         inimigos[0][0]=1;
     }
-    if(timer-marcadores[1]>=5000)
+    if(timer-marcadores[1]>=tempoFlyer)
     {
         marcadores[1]=timer;
         inimigos[1][0]=1;
     }
-    if(timer-marcadores[2]>=7500)
+    if(timer-marcadores[2]>=tempoFlyer2)
     {
         marcadores[2]=timer;
         inimigos[1][1]=1;
@@ -193,7 +199,8 @@ int main()
   //  draw_sprite(screen, buffer, 0, 0);
   //  clear(buffer);
       draw_sprite(buffer, logo, 50, -30);
-      textprintf_centre_ex(buffer,font,400,250,makecol(255,255,255),-1,"PRESS ENTER TO PLAY");
+      textprintf_centre_ex(buffer,font,400,250,makecol(255,255,255),-1,"PRESS ENTER TO PLAY OR ESC TO QUIT");
+      textprintf_centre_ex(buffer,font,160,540,makecol(255,255,255),-1,"Controls: z to shoot and space to fly");
 
     }
     else if(rodando){
@@ -224,8 +231,8 @@ int main()
       draw_sprite(screen, buffer, 0, 0);
       clear(buffer);
       draw_sprite(buffer, logo, 50, -30);
-      textprintf_centre_ex(buffer,font,400,225,makecol(255,255,255),-1,"FINAL SCORE:%ld",n.finalScore);
-      textprintf_centre_ex(buffer,font,400,250,makecol(255,255,255),-1,"PRESS ENTER TO PLAY AGAIN");
+      textprintf_centre_ex(buffer,font,400,270,makecol(255,255,255),-1,"FINAL SCORE:%ld",n.finalScore);
+      textprintf_centre_ex(buffer,font,400,290,makecol(255,255,255),-1,"PRESS ENTER TO PLAY AGAIN OR ESC TO QUIT");
     }
 
 

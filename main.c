@@ -142,7 +142,7 @@ int main()
     if(rodando == 1 && (j_stubby<60 || j_flyer2<60 || j_flyer<60))
     {
         rodando=0;
-        n.finalScore=timer+pontosExtras(abatidos);
+        n.finalScore=timer/10+pontosExtras(abatidos);
         j_stubby=750;
         j_flyer=750;
         j_flyer2=750;
@@ -211,7 +211,7 @@ int main()
     }
     else if(rodando){
      draw_sprite(buffer, BG, 0, 0);
-     textprintf_centre_ex(buffer,font,740,10,makecol(255,255,255),-1,"SCORE:%d",timer);
+     textprintf_centre_ex(buffer,font,740,10,makecol(255,255,255),-1,"SCORE:%d",timer/10);
      draw_sprite_ex(buffer, pod, 0, i_pod, DRAW_SPRITE_NORMAL, DRAW_SPRITE_H_FLIP);
      if(inimigos[0][0])
      {

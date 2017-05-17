@@ -36,6 +36,7 @@ int main()
   allegro_init();
   install_timer();
   install_keyboard();
+  install_sound(DIGI_AUTODETECT,MIDI_AUTODETECT,NULL);
   set_color_depth(32);
   set_gfx_mode(GFX_AUTODETECT_WINDOWED, 800, 550, 0, 0);
   set_window_title("8 Bit Nier");
@@ -60,6 +61,9 @@ int main()
   LOCK_VARIABLE(timer);
   install_int_ex(maisTimer, MSEC_TO_TIMER(1));
 
+  ///SONS
+  SAMPLE* musica = load_sample("amusement_park.wav");
+
   ///BITMAPS
   BITMAP* buffer = create_bitmap(SCREEN_W, SCREEN_H);
   BITMAP* bullet = load_bitmap("bullet.bmp", NULL);
@@ -74,6 +78,8 @@ int main()
   {
     //INPUT
   	//keyboard_input();
+  	if(menu)
+    play_sample(musica,200,128,1000,TRUE);
 
     if(key[KEY_ESC])
     {fecha_programa();}
@@ -239,6 +245,7 @@ int main()
   }
 
   ///FINALIZAÇÂO
+  destroy_sample(musica);
   destroy_bitmap(buffer);
   destroy_bitmap(pod);
   destroy_bitmap(BG);
